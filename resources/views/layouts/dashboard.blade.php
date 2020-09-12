@@ -18,6 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
@@ -73,11 +75,18 @@
             </div>
         </nav>
 
-        <main class="py-4">
-        <x-menu :aktif="$aktif"/>
-            @yield('content')
+        <main>
+        <div class="container-fluid">
+            <div class="row">  
+                <div class="col-md-2">   
+                     <x-menu :active="$active"/>
+        </div>
 
-            
+        <div class="col-md-10 main-content">
+            @yield('content')
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 </body>

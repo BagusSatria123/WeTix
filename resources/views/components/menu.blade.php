@@ -1,6 +1,6 @@
 <nav class="nav flex-column">
     @foreach($list AS $row)
-    <a class="nav-link @if($row['label'] == $active) active @endif" href="#">
+<a class="nav-link {{$isActive($row['label']) ? 'active' : ''}}" href="#">
         {{$row['label']}}
     @endforeach
     </a>

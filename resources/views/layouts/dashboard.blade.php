@@ -82,7 +82,7 @@
                      <x-menu :active="$active"/>
         </div>
 
-        <div class="col-md-10 main-content">
+        <div class="col-md-10 main-content p-5">
             @yield('content')
                     </div>
                 </div>

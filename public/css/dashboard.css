@@ -1,5 +1,15 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0px;
+}
+
 body {
   background: white;
+  color: #656e88;
 }
 
 .main-content {
@@ -22,5 +32,19 @@ body {
   opacity: 1;
   color: #000;
   font-weight: bold;
+}
+
+.card-header h3 {
+  font-size: 1em;
+  letter-spacing: 1px;
+}
+
+table.table tr th {
+  color: #737373;
+}
+
+table.table tr td {
+  color: #737373;
+  font-size: 0.9em;
 }
 

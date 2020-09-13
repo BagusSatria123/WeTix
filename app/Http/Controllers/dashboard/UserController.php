@@ -13,10 +13,18 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(User $users)
+    public function index(Request $request, User $users)
     {
+
+        $q = $request->input('q');
+        
+
         $active = 'Users';
-        $users = $users->paginate(10);
+        $users = $users-> when($q,function($query) use ($q){
+            return $query->where ('name','like','%'.$q.'%')
+                         ->orWhere('email','like','%'.$q.'%'); 
+        })
+        ->paginate(10);
         //untuk melihat database di web
         // dd($users);
         return view('dashboard/user/list',[

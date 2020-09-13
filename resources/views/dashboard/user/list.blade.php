@@ -5,11 +5,23 @@
             <div class="row">
                 <div class="col-8">
                     <h3>Users</h3>
-                    </div>   
+                    </div> 
+
+                    <div class="col-4">
+                    <form method="GET" action="{{url('dashboard/users')}}">
+                    <div class="input-group">
+                    <input type="text" class="form-control" name="q">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-secondary btn-sm">Search</button>
+                        
+                    </div>    
+                    </div>    
+                    </form>    
+                    </div>  
             </div>
         </div>
-        <div class="card-body">
-            <table class="table  p-5 table-borderless table-striped table-hover">
+        <div class="card-body p-0">
+            <table class="table table-borderless table-striped table-hover">
                 <thead>
                 <tr>
                     <th>No.</th>

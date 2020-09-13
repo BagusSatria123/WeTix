@@ -10,7 +10,7 @@
                     <div class="col-4">
                     <form method="GET" action="{{url('dashboard/users')}}">
                     <div class="input-group">
-                    <input type="text" class="form-control" name="q">
+                    <input type="text" class="form-control" name="q" value="{{$request['q'] ?? ""}}">
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-secondary btn-sm">Search</button>
                         
@@ -43,7 +43,7 @@
                 @endforeach
                 </tbody>
             </table>
-            {{$users->links()}}
+            {{$users->appends($request)->links()}}
         </div>
     </div>  
 @endsection

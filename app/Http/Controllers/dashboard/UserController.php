@@ -25,10 +25,13 @@ class UserController extends Controller
                          ->orWhere('email','like','%'.$q.'%'); 
         })
         ->paginate(10);
+
+        $request = $request->all();
         //untuk melihat database di web
-        // dd($users);
+        // dd($request);
         return view('dashboard/user/list',[
             'users' => $users,
+            'request' => $request,
             'active' => $active
             ]);
     }

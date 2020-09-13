@@ -9,25 +9,29 @@
             </div>
         </div>
         <div class="card-body">
-            <table class="table p-5">
+            <table class="table  p-5 table-borderless table-striped table-hover">
+                <thead>
                 <tr>
-                    <th>#</th>
+                    <th>No.</th>
                     <th>Nama</th>
                     <th>Email</th>
                     <th>Registed</th>
                     <th>Edited</th>
                 </tr>
+                </thead>
+                <tbody>
                 @foreach ($users as $user)
-                    
                 <tr>
-                    <td>1</td>
+                <td>{{($users->currentPage()-1) * $users->perPage() + $loop->iteration}}</td>
                 <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
                     <td>{{$user->created_at}}</td>
                     <td>{{$user->updated_at}}</td>
                 </tr>
                 @endforeach
+                </tbody>
             </table>
+            {{$users->links()}}
         </div>
     </div>  
 @endsection

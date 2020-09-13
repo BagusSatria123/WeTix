@@ -48,3 +48,8 @@ table.table tr td {
   font-size: 0.9em;
 }
 
+.pagination {
+  justify-content: center;
+  align-items: center;
+}
+

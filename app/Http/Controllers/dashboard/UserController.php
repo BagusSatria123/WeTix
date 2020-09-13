@@ -17,6 +17,8 @@ class UserController extends Controller
     {
         $active = 'Users';
         $users = $users->paginate(10);
+        //untuk melihat database di web
+        // dd($users);
         return view('dashboard/user/list',[
             'users' => $users,
             'active' => $active

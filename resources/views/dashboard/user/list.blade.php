@@ -29,6 +29,7 @@
                     <th>Email</th>
                     <th>Registed</th>
                     <th>Edited</th>
+                    <th>&nbsp;</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -39,6 +40,7 @@
                     <td>{{$user->email}}</td>
                     <td>{{$user->created_at}}</td>
                     <td>{{$user->updated_at}}</td>
+                <td><a href="{{url('dashboard/user/edit/'.$user->id)}}" class="btn btn-success btn-sm">Edit</a></td>
                 </tr>
                 @endforeach
                 </tbody>

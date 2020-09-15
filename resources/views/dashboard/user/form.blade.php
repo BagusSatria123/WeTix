@@ -22,10 +22,16 @@
                 <div class="form-group">
                     <label for="name">Nama</label>
                 <input type="text" class="form-control" name="name" value="{{$user->name}}">
+                @error('name')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                <input type="text" class="form-control" name="email" value="{{$user->email}}">
+                <input type="text" class="form-control" name="email" value="{{old('email') ?? $user->email}}">
+                @error('email')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-success btn-sm">Update</button>

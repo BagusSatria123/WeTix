@@ -123,6 +123,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = USER::find($id);
+        $user->delete();
+        return redirect('dashboard/users');
     }
 }
